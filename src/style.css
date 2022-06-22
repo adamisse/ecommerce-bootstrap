@@ -6,6 +6,19 @@
 
 .navbar-brand {
     filter: saturate(2);
+    animation: logo-animation 5s infinite;
+}
+
+@keyframes logo-animation{
+    0%{
+        filter: saturate(1.5);
+    }
+    50%{
+        filter: saturate(0);
+    }
+    100%{
+        filter: saturate(1.5);
+    }
 }
 
 header input{
@@ -31,13 +44,23 @@ input[type="search"]:focus{
     margin: 2rem 1.2rem;
 }
 
+.carousel-item img {
+    object-fit: cover !important;
+    width: auto;
+    height: 100vh;
+    max-height: 100vh;
+    cursor: pointer;
+    filter: saturate(1.5);
+}
+
 .product-image{
     display: flex;
     max-width: 300px;
     max-height: 300px;
     height: 300px;
     background-color: #fff;
-    padding: 20px;
+    padding: 2rem;
+    cursor: pointer;
 }
 
 .product-image img {
@@ -51,10 +74,12 @@ input[type="search"]:focus{
     font-size: 1rem;
     overflow: hidden;
     text-overflow: ellipsis;
+    line-height: 1.2rem;
+    height: 2.4rem;
 }
 
 @media(max-width: 1366px){
-    .product-name{
+    .product-name, .brand-name{
         text-align: center;
     }
    
@@ -72,6 +97,9 @@ input[type="search"]:focus{
 }
 
 @media(max-width: 576px){
+    .product > div{
+        align-items: center;
+    }
     .product-name{
         order: -1;
     }
@@ -81,7 +109,7 @@ input[type="search"]:focus{
     }
  
     .product-options{
-        width: 80%;
+        width: 100%;
         justify-content: space-evenly;
     }
 }
@@ -97,8 +125,14 @@ input[type="search"]:focus{
     bottom: 50px;
     right: 50px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .whatsapp-button img{
     filter: grayscale(100%) brightness(0.8) contrast(1.5);
+    transition: 0.5s;
+}
+
+.whatsapp-button:hover img{
+    filter: grayscale(0);
 }
