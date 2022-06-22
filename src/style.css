@@ -61,6 +61,11 @@ input[type="search"]:focus{
     background-color: #fff;
     padding: 2rem;
     cursor: pointer;
+    transition: 0.5s; 
+}
+
+.product-image:hover{
+    padding: 1rem;
 }
 
 .product-image img {
